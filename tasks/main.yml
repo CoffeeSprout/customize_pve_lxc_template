@@ -72,7 +72,7 @@
 
 - name: Copy new template to storage
   copy:
-    dest: "/mnt/pve/{{ template_storage }}/template/cache/{{ template_name }}"
+    dest: "/mnt/pve/{{ template_destination_storage }}/template/cache/{{ template_name }}"
     src: "{{ backup_file.files[0].path }}"
     remote_src: yes
   when: backup_file.matched == 1      # Only when we have one matched file in the directory

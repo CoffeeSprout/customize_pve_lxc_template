@@ -7,7 +7,8 @@ template_ref_uri:       "{{ template_ref_storage }}:vztmpl/{{ templare_ref }}"
 # New template name, should end with .tar.gz
 # Passwords can be stored with ansible-vault (more here: https://docs.ansible.com/ansible/latest/user_guide/vault.html)
 template_name:          "centos-8-ssh-20200604_amd64.tar.gz"
-template_storage:       "images"       # Proxmox storage name for storing container templates
+template_storage:       "local-zfs"       # Proxmox storage name for building container templates
+template_destination_storage: "images"
 template_root_password: "password"  # New password for root
 template_hostname:      "centos8"   # Template name
 template_netif: "{'net0':'name=eth0,ip=dhcp,ip6=dhcp,bridge=vmbr0'}"
